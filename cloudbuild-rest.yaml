@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - build
+      - -f
+      - rest/Dockerfile-rest
+      - -t
+      - us-west1-docker.pkg.dev/demucs-513803/lab7-images/demucs-rest:v2
+      - rest/
+images:
+  - us-west1-docker.pkg.dev/demucs-513803/lab7-images/demucs-rest:v2

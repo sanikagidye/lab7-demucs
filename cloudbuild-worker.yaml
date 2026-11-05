@@ -1,0 +1,17 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - build
+      - -f
+      - worker/Dockerfile
+      - -t
+      - us-west1-docker.pkg.dev/demucs-513803/lab7-images/demucs-worker:v2
+      - worker/
+
+options:
+  machineType: E2_HIGHCPU_8
+
+timeout: 3600s
+
+images:
+  - us-west1-docker.pkg.dev/demucs-513803/lab7-images/demucs-worker:v2

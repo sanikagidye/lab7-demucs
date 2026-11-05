@@ -1,0 +1,23 @@
+replicaCount: 1
+drivesPerNode: 1
+
+mode:
+  standalone:
+    enabled: true
+  distributed:
+    enabled: false
+
+storageclass:
+  name: standard-rwo
+  dataStorageSize: 10Gi
+  logStorageSize: 1Gi
+
+secret:
+  existingSecret: rustfs-credentials
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    memory: 1Gi
