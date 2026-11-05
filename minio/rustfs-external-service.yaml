@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: minio
+  namespace: default
+spec:
+  type: ExternalName
+  externalName: rustfs-svc.rustfs.svc.cluster.local

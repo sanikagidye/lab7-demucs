@@ -40,12 +40,7 @@ for mp3 in glob.glob("data/short*mp3"):
     print(f"Separate data/{mp3}")
     mkReq(requests.post, "apiv1/separate",
         data={
-            "mp3": base64.b64encode( open(mp3, "rb").read() ).decode('utf-8'),
-            "callback": {
-                "url": "http://localhost:5000",
-                "data": {"mp3": mp3, 
-                         "data": "to be returned"}
-            }
+            "mp3": base64.b64encode( open(mp3, "rb").read() ).decode('utf-8')
         },
         verbose=True
         )
